@@ -41,9 +41,12 @@ const styles = {
   },
   imageStyle: {
     width: "100%",
-    position: "absolute",
+    // position: "absolute",
     top: "-260px",
-    zIndex: "-1"
+    zIndex: "-1",
+    height: '600px',
+    float: 'left',
+    // background: 'fixed center'
   }
 };
 
@@ -153,13 +156,13 @@ class Nav extends Component {
 
         <div>
           <div style={{}}>
-            <div style={{ display: "block" }}>
+            <div >
               <img
                 style={styles.imageStyle}
                 src={require("../images/panocake.jpg")}
               />
             </div>
-            <div style={{ display: "block" }}>{this.renderPage()}</div>
+            <div>{this.renderPage()}</div>
           </div>
         </div>
       </div>
