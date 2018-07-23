@@ -1,0 +1,535 @@
+
+    <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width">
+<meta name="p:domain_verify" content="dcded873b1db7401013e37c79dae2008"/>
+	<title>Dessert and Candy Tables</title>
+<meta name="description" content="Hollywood hotspot for same day cakes and gourmet dessert gifts! Desserts for any budget. Next day logo cookies and corporate gifts. Dessert bars and catering. Custom cakes, cupcakes, cake pops, decorated cookies, and more!" />
+<meta name="keywords" content="" />
+<meta name="robots" content="index,follow,archive" />
+
+<meta property="og:image" content="http://www.sweetesbakeshop.com/images/uploads/WIPA_Love_Dessert_Table.jpg" />
+<meta property="og:title" content="Sweet E’s Bake Shop - Cake Delivery, Dessert Gifts - Order Now!" />
+<meta property="og:description" content="Hollywood hotspot for same day cakes and gourmet dessert gifts! Desserts for any budget. Next day logo cookies and corporate gifts. Dessert bars and catering. Custom cakes, cupcakes, cake pops, decorated cookies, and more!" />
+
+
+<meta name="geo.position" content="," />
+<meta name="geo.placename" content="" />
+<meta name="geo.region" content="" />
+
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/bootstrap.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/css/bootstrap-theme.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/global_embeds/site_css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="/css/superfish.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/css/colorbox.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/css/jquery.mmenu.css" media="screen" />
+    <link href="/css/jquery.mmenu.positioning.css" type="text/css" rel="stylesheet" />
+    <link href="/css/jquery.mmenu.header.css" type="text/css" rel="stylesheet" />
+<!--[if lt IE 9]>
+ <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.colorbox-min.js"></script>
+<script type="text/javascript" src="/js/jquery.bday-picker.min.js"></script>
+<script src="/js/jquery.validate.min.js" type="text/javascript"></script>
+<script defer src="/js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="/js/jquery.mmenu.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.mmenu.offcanvas.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.mmenu.header.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/flexslider.css" media="screen" />
+
+
+<link rel="stylesheet" type="text/css" href="/css/responsive-tabs.css" media="screen" />
+<script src="/js/jquery.responsiveTabs.min.js" type="text/javascript"></script>
+<script src="/js/jquery.cookie.js" type="text/javascript"></script>
+<script type="text/javascript">  
+$(document).ready(function(){ 
+	$('#product_tabs').responsiveTabs({
+		rotate: false,
+		startCollapsed: 'accordion',
+		collapsible: 'accordion'
+	});
+	
+	$("#main_nav").mmenu({  
+					/*slidingSubmenus: false,*/
+					header:true,
+					"offCanvas": {
+                  		"position": "right"
+              		 }
+				}, {clone:true});
+				
+	$("#mobile_menu_button").click(function(e) {
+         $("#mm-main_nav").trigger("open.mm");
+		 e.preventDefault();
+      });										
+	$("#mm-close").on('click',function(e) {
+         $("#mm-main_nav").trigger("close.mm");
+		 e.preventDefault();
+      });
+	  
+			$("a[rel='lightbox']").colorbox();
+		$("#dob_picker").birthdaypicker({});
+	$("#sub_product_selector").change(function(){
+		if($(this).val() != ''){
+			$("#sub_selector_box").html('');
+			$("#sub_select_" + $(this).val()).clone().appendTo($("#sub_selector_box"));	
+			$("#sub_selector_box select").trigger('change');
+		}else{
+			$("#sub_selector_box").html('');
+			$('li.flavor').remove();
+		}
+	});
+	
+	$("select[name=product_id]").change(function(){
+		if($(this).val() != ''){
+			$("#option_selector_box").html('');
+			$("#options_selects .options_" + $(this).val()).clone().appendTo($("#option_selector_box"));
+			$("#option_selector_box select").trigger('change');
+		}else{$("#option_selector_box").html('');}
+	});
+	$("select[name=product_id]").trigger('change');
+	
+	$("#sub_product_selector").val('');
+	$("select.flavor_checker").live('change',function(){
+		if($(this).val() != ''){
+			var i = parseInt($(this).children(":selected").attr("id"));
+			$('li.flavor').remove();
+			for(x=0;x<i;x++){
+				$("#form_list").append('<li class="flavor"><label>Flavor ' + (x+1) + ':</label></li>');
+				$("#flavors_" + $(this).val()).clone().appendTo($("#form_list li:last"));
+			}
+		}
+	});
+	if($("#sub_product_selector").val() != ''){$("select[name=product_id]").trigger('change');}
+	
+	$('input.five').on('keypress',function () {
+		var words = $(this).val().split(/\b[\s,\.-:;]*/);
+		var content = $(this).val();
+		for (var i = 5; i < words.length; ++i) {
+			content = trimNonWords(content);
+			content = content.substring(0, content.length - words[i].length);
+		}
+		$(this).val(content);
+	});
+	
+	$("#add_to_cart_form").validate({errorPlacement: function(error,element){element.parent('div').after(error);}							
+	});
+	
+	
+	
+	$('#carousel').flexslider({
+		animation: "slide",
+		controlNav: false,
+		animationLoop: false,
+		slideshow: false,
+		itemWidth: 100,
+		itemMargin: 5,
+		asNavFor: '#slider'
+	});
+	
+	$('#slider').flexslider({
+		animation: "slide",
+		controlNav: false,
+		animationLoop: false,
+		slideshow: false,
+		sync: "#carousel",
+		start: function(slider){$('body').removeClass('loading');}
+	});
+	
+	$('#images').flexslider({
+		animation: "slide",
+		controlNav: false,
+		animationLoop: true,
+		slideshow: true,
+		start: function(slider){$('body').removeClass('loading');}
+	});
+	
+	if(window.location.hash != ''){
+		var slider_hash = window.location.hash.replace('#','');
+		$("li." + slider_hash).trigger('click');		
+	}
+	
+	/*$("#videos a").click(function(){
+		$("#videos li").removeClass('selected');
+		$(this).parent().addClass('selected');
+		$.get($(this).attr('href'),function(data){
+			$("#video_box").html(data);
+			$("html, body").animate({ scrollTop: 200 }, "slow");
+		});
+		return false;
+	});*/
+	
+	$("a.video_popup").on('click',function(e){
+		e.preventDefault();
+		//alert('jj');
+		//$("#videoModal").modal('show');
+		/*$.get($(this).attr('href'),function(data){
+			$("#videoModal modal-body").html(data);
+			$("#videoModal").modal('show');
+			//$("html, body").animate({ scrollTop: 200 }, "slow");
+		});*/
+		$('#videoModal button.close').click(function () {
+			$('#videoModal modal-body').html('');
+		});
+		/*videoSRC = $(this).attr( "href" ), 
+		videoSRCauto = videoSRC+"&autoplay=1";
+		$('#videoModal iframe').attr('src', videoSRCauto);
+		$('#videoModal button.close').click(function () {
+			$('#videoModal iframe').attr('src', videoSRC);
+		});*/
+	});
+	
+	
+	
+	
+	
+	
+	$("fieldset.hide").hide();
+	$("a.fieldset_click").click(function(){
+		$(this).remove();
+		$("fieldset.hide").slideDown();
+		return false;
+	});
+	
+	
+	
+	$("#biggest_fan_form").validate();
+	$("#birthday_form").validate();
+	
+	$("#close_newsletter_modal").click(function(e){
+		e.preventDefault();
+		$("#newsletter_modal").modal('hide');
+	});
+	
+	$("#close_worf_modal").click(function(e){
+		e.preventDefault();
+		$("#worf").modal('hide');
+	});
+	
+	/*$("#newsletter_modal form").submit(function(e){$("#newsletter_modal").modal('hide');});*/
+	
+	if($.cookie('newsletter_popup') != 'true'){
+		$.cookie('newsletter_popup','true', { expires: 90, path: '/' });
+		$(".newsletter_link").trigger('click');
+	}
+	
+	if(window.location.hash == '#worf'){$('#worf').modal('show');}
+	
+});
+
+function trimNonWords(str) {
+    var col = str.length-1;
+    while (" ,.-:;".indexOf(str.charAt(col)) >= 0) {--col;}
+    if (col+1 < str.length) {
+        return str.substring(0, col+1);
+    }
+    return str;
+}
+</script>
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '522974871202987');
+fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=522974871202987&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+<script type="text/javascript">
+(function(a,e,c,f,g,b,d){var h={ak:"943388418",cl:"Yq5sCPebz2AQgu7rwQM"};a[c]=a[c]||function(){(a[c].q=a[c].q||[]).push(arguments)};a[f]||(a[f]=h.ak);b=e.createElement(g);b.async=1;b.src="//www.gstatic.com/wcm/loader.js";d=e.getElementsByTagName(g)[0];d.parentNode.insertBefore(b,d);a._googWcmGet=function(b,d,e){a[c](2,b,h,d,null,new Date,e)}})(window,document,"_googWcmImpl","_googWcmAk","script");
+_googWcmGet('phone_number', '323.422.8885')
+</script>
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=167385236770475";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+    	
+<div class="modal fade" id="newsletter_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    <img src="/images/template/newsletter_bg.png" />
+    <a href="#" id="close_newsletter_modal">X</a>
+    <form action="http://www.sweetesbakeshop.com/?ACT=72" accept-charset="utf-8" id="newsletter_signup" method="post"><div style="display:none">
+<input type="hidden" name="params_id" value="13251002" />
+<input type="hidden" name="csrf_token" value="055a46f2a66d39d1283d331cc737f327d7dd126b" />
+</div>
+        <input type="hidden" name="newsletter_subscribe" value="y" />
+    	<label>Enter Email:</label>
+        <input name="email" type="email" class="required form_input" /> 
+        <input type="submit" name="go_submit" class="submit form_bt" value="Join!" />
+    <div class="snap" style="position: absolute !important; height: 0 !important;  overflow: hidden !important;"><input type="text" id="snap_VqqVCgmJB" name="snap_VqqVCgmJB" value="VaGBLQkjWmGYQ" /></div>
+<script type="text/javascript">document.getElementById("snap_VqqVCgmJB").value = "piggvrqPaABDv";</script>
+</form>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+	<header class="row">    	
+        <a href="#" id="mobile_menu_button" class="visible-xs visible-sm">
+        	<img src="/images/template/icon-menu-off.jpg" class="off" />
+            <img src="/images/template/icon-menu-on.jpg" class="on" />
+        </a>
+        <div class="col-md-12 visible-xs visible-sm">
+        	<ul class="comfort clearfix">
+                                    <li><a href="/store/customer/account/login/">LOG IN</a></li>
+                    <li class="li_dot"> &nbsp; </li>
+                    <li class="hidden-sm hidden-xs"><a href="/store/customer/account/login/">REGISTER</a></li>
+                                <li class="hidden-md hidden-lg"><a href="/blog">BLOG</a></li>
+                <li class="li_dot"> &nbsp; </li>
+                <li><a href="/store/checkout/cart/" class="shopping_bag">Cart</a></li>
+            </ul> 
+        </div>
+        <div class="col-md-4 hidden-xs hidden-sm">  
+            <ul class="comfort clearfix">
+                                    <li><a href="/store/customer/account/login/">LOG IN</a></li>
+                    <li class="li_dot"> &nbsp; </li>
+                    <li><a href="/store/customer/account/login/">REGISTER</a></li>
+                                    <li style="clear:both;"><a href="#" class="newsletter_link" data-toggle="modal" data-target="#newsletter_modal">Get 10% Off Now!</a></li>
+            </ul>  
+            <div class="inquire"><a href="/contact">Inquire About an Order</a></div>
+     		<h2 id="phone_number" class="phone_number">323.422.8885</h2>
+        </div>
+        
+        <div class="col-md-4 logo">
+        	<a href="/"><img src="/images/template/logo.png" title="Sweet E's Bake Shop" alt="Sweet E's Bake Shop" /></a>
+        </div>
+        
+        <div class="col-md-4 hidden-xs hidden-sm">
+            <ul class="comfort comfort_right clearfix">
+            	<li><a href="/blog">Blog</a></li>
+                <li class="li_dot"> &nbsp; </li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li class="li_dot"> &nbsp; </li>
+                <li><a href="/store/checkout/cart/" class="shopping_bag">Cart</a></li>
+            </ul>
+            <p id="social_media" align="right">
+                <a href="http://www.facebook.com/SweetEsBakeShop" target="_blank"><img src="/images/template/facebook.png"></a>
+                <a href="http://twitter.com/SweetEsBakeShop" target="_blank"><img src="/images/template/twitter.png"></a>
+                <a href="http://pinterest.com/sweetesbakeshop/" target="_blank"><img src="/images/template/pinterest.png"></a>
+                <a href="http://www.youtube.com/user/SweetEsBakeShop/" target="_blank"><img src="/images/template/youtube.png"></a>
+                <a href="http://www.instagram.com/SweetEsBakeShop/" target="_blank"><img src="/images/template/instagram.png"></a>
+            </p>
+        	<form method="post" action="/search/results" id="search_form">
+            	<input type="hidden" name="XID" value="055a46f2a66d39d1283d331cc737f327d7dd126b" /> 
+                <input type="submit" id="searchsubmit" value="Search" />
+                <input type="text" class="inputbox input_text"  name="keywords" id="keywords"  placeholder="what are you craving?" />
+            </form>
+ 		</div>
+    </header>
+    <div class="white_bkg row">
+        <nav id="main_nav">    	
+            <ul id='lower_menu'>
+      
+   <li class="">
+   		<a href="/gifts">Shop <br>Gifts</a>
+   </li>
+
+      
+   <li class="">
+   		<a href="">Same Day <br>Delivery</a>
+   </li>
+
+      
+   <li class="">
+   		<a href="/flavors">Cupcakes & <br>More</a>
+   </li>
+
+      
+   <li class="">
+   		<a href="/flavors/category/custom-cookies">Custom <br>Cookies</a>
+   </li>
+
+      
+   <li class="">
+   		<a href="/flavors/category/cakes">Cake <br>Delivery</a>
+   </li>
+
+      
+   <li class="">
+   		<a href="/flavors/category/corporate-logo-desserts">Logo & <br>Photo Sweets</a>
+   </li>
+
+      
+   <li class="one_line">
+   		<a href="/catering/">About</a><ul>
+      
+   <li class="one_line">
+   		<a href="/contact/">Contact</a>
+   </li>
+
+      
+   <li class="">
+   		<a href="/faq/">FAQ</a>
+   </li>
+
+      
+   <li class="">
+   		<a href="/catering/">What We Do</a>
+   </li>
+
+      
+   <li class="one_line">
+   		<a href="/blog_old/">Blog</a>
+   </li>
+
+      
+   <li class="">
+   		<a href="/classes-parties/">Parties & Classes</a>
+   </li>
+
+      
+   <li class="last">
+   		<a href="/press/">Press</a>
+   </li>
+</ul>
+   </li>
+
+      
+   <li class="last">
+   		<a href="/gallery/">Custom <br>Orders</a>
+   </li>
+</ul>
+        </nav>
+		
+               		
+    
+    <div class="col-md-8 pull-right">
+        
+    
+    
+    <h1 class="sidebar_page">Dessert and Candy Tables</h1>
+    <p style="text-align: center;"><img alt="" src="http://www.sweetesbakeshop.com/images/uploads/Love_is_Sweet_Wedding_Dessert_Bar.jpg" style="width: 500px;" /></p>
+
+<p>A Sweet E's dessert display is truly a work of art that will WOW your guests!&nbsp; We provide everything you need to create the perfect dessert or candy table for your event.</p>
+
+<ul>
+	<li>Custom desserts to match any theme/color scheme</li>
+	<li>Full service catering, including: table design, display rentals, delivery, table set up, and pick up the next day</li>
+	<li>Custom signs, tags, and labels to match</li>
+	<li>Add your logo! &nbsp;Corporate dessert displays available.</li>
+</ul>
+
+<p style="text-align: center;"><strong>Browse our Dessert Bar Gallery <a href="http://www.sweetesbakeshop.com/gallery/dessert-bars">here</a></strong></p>
+    
+        
+    
+    
+    
+    
+    
+    </div>
+        
+    
+    
+    
+<div id="sidebar" class="col-md-4">
+    <h2 align="center">What We Do</h2>
+    
+    <div class="sidebar_item">
+        <ul id="side_links">
+        <li class="first"><a href="http://www.sweetesbakeshop.com/catering/gifts/">Gifts</a></li>
+<li><a href="http://www.sweetesbakeshop.com/catering/custom-cakes/">Custom Cakes</a></li>
+<li><a href="http://www.sweetesbakeshop.com/catering/holidays/">Holidays</a></li>
+<li class="here"><a href="http://www.sweetesbakeshop.com/catering/dessert-table/">Dessert and Candy Tables</a></li>
+<li><a href="http://www.sweetesbakeshop.com/catering/party-favors/">Party Favors</a></li>
+<li><a href="http://www.sweetesbakeshop.com/catering/wedding/">Weddings</a></li>
+<li><a href="http://www.sweetesbakeshop.com/catering/corporate-accounts/">Corporate Accounts</a></li>
+<li class="last"><a href="http://www.sweetesbakeshop.com/catering/wholesale-pastries/">Wholesale Pastries</a></li>
+
+        </ul>
+    </div>
+</div><!--sidebar-->
+                   
+<!--        </div>-->
+        
+    </div>
+    <footer>
+    	<div class="col-md-8" id="footer_links">
+        	
+	<a href="/contact/" class="">Contact</a>
+
+	<a href="/about/" class="">About</a>
+
+	<a href="/faq/" class="">FAQ</a>
+
+	<a href="/shipping-delivery/" class="">Shipping & Delivery Info</a>
+
+	<a href="/track-shipment/" class="">Track Shipment</a>
+
+	<a href="/privacy-policy/" class="">Privacy Policy</a>
+
+	<a href="/gift-cards/" class="">Gift Cards</a>
+
+        
+        </div>
+        <div class="col-md-4" id="social_media">
+          <a href="http://www.facebook.com/SweetEsBakeShop" target="_blank"><img src="/images/template/facebook.png" /></a>
+            <a href="http://twitter.com/SweetEsBakeShop" target="_blank"><img src="/images/template/twitter.png" /></a>
+            <a href="http://pinterest.com/sweetesbakeshop/" target="_blank"><img src="/images/template/pinterest.png" /></a>
+            <a href="http://www.youtube.com/user/SweetEsBakeShop/" target="_blank"><img src="/images/template/youtube.png" /></a>
+        <a href="http://www.instagram.com/SweetEsBakeShop/" target="_blank"><img src="/images/template/instagram.png"></a>
+        </div>
+        <div id="tagline" class="hidden-xs hidden-sm"><a href="http://c2js.com" target="_blank">Website by JumpStart</a></div>
+    </footer>
+</div>
+
+
+
+
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="worf" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <img src="/wewantworf/images/worf_popup.jpg" />
+            <a href="#" id="close_worf_modal">X</a>
+            <div id="worf_share">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http://sweetesbakeshop.com/wewantworf" target="_blank"><img src="/wewantworf/images/facebook.png" /></a>
+                <a href="https://twitter.com/home?status=I%20just%20joined%20the%20%23WeWantWorf%20Movement%20by%20purchasing%20mini-muffins%20from%20%40sweetesbakeshop!%20%20Join%20the%20battle:%20%20http://goo.gl/rXiIdl" target="_blank"><img src="/wewantworf/images/twitter.png" /></a>
+                <a href="mailto:?subject=We Want Worf" target="_blank"><img src="/wewantworf/images/email.png" /></a>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2349170-20']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
+ 
