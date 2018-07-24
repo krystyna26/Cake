@@ -9,10 +9,12 @@ const styles = {
     // boxSizing: "border-box",
     // position: "relative",
     // top: "340px"
+    padding: '52px'
   },
   gridStyle: {
-    width: "200px",
+    width: "207px",
     height: "260px",
+    padding: '40px',
     gridTemplateColumns: "fit-content(150px) fit-content(960px)"
   }
 };
@@ -47,9 +49,12 @@ class Home extends Component {
             />
           </span>
         </div>
-        <p>Some pictures</p>
-        <p>Short description</p>
-        <p>Address</p>
+        
+        <h4>Short description of business</h4>
+        <p>street</p>
+        <p>city</p>
+        <p>email@gmail.com</p>
+        <p>#123-123-1234</p>
       </div>
     );
   }

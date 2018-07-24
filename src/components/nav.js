@@ -27,7 +27,8 @@ const styles = {
     display: "inline-block",
     width: "10em",
     height: "3.25em",
-    margin: "21px",
+    margin: "10px",
+    paddingTop: '20px',
     transition: ".3s background-color"
   },
   logoStyle: {
@@ -51,7 +52,10 @@ const styles = {
   contentStyle: {
     border: "1px solid green",
     // display: "block"
-    position: "relative"
+    position: "absolute",
+    top: "434px",
+    width: "100%",
+    height: "800px",
   }
 };
 
