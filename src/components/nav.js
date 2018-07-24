@@ -41,12 +41,17 @@ const styles = {
   },
   imageStyle: {
     width: "100%",
-    // position: "absolute",
+    position: "relative",
     top: "-260px",
     zIndex: "-1",
-    height: '600px',
-    float: 'left',
+    height: "600px",
+    float: "left"
     // background: 'fixed center'
+  },
+  contentStyle: {
+    border: "1px solid green",
+    // display: "block"
+    position: "relative"
   }
 };
 
@@ -155,16 +160,13 @@ class Nav extends Component {
         </div>
 
         <div>
-          <div style={{}}>
-            <div >
-              <img
-                style={styles.imageStyle}
-                src={require("../images/panocake.jpg")}
-              />
-            </div>
-            <div>{this.renderPage()}</div>
-          </div>
+          <img
+            style={styles.imageStyle}
+            src={require("../images/panocake.jpg")}
+          />
         </div>
+
+        <div style={styles.contentStyle}>{this.renderPage()}</div>
       </div>
     );
   }
