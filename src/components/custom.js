@@ -3,20 +3,73 @@ import Button from "../shared/NavButtons";
 
 const styles = {
   navStyle: {
-    padding: '52px'
+    padding: '52px',
+    // backgroundImage: "src={require('../images/logo.png')}",
+  },
+  gridStyle:{
+    display: "grid", 
+    // width: '360px',
+    gridTemplateColumns: 'fit-content(300px) fit-content(300px) 1fr',
+    gridGap: '5px',
+    boxSizing: 'border-box',
+    // height: '900px',
+    width: '100%',
+    backgroundColor: 'pink',
+    padding: '10px',
+    gridGap: '45px',
+  },
+  titleStyle:{
+    margin: '20px 0px',
+    
+  },
+  tableStyle:{
+    width: '350px',
+  },
+  descriptionStyle:{
+    width: '100%',
+    borderRadius: '2px',
+    boxShadow: '0 9px 6px 0 rgba(0, 0, 0, 0.04), 0 10px 10px 0 rgba(0, 0, 0, 0.05)',
+    padding:'10px',
+  },
+  logoStyle: {
+    // color: "pink",
+    width: "200px",
+    margin: " 15px",
+    // position: "absolute",
+    // left: " 85px",
+    // background: "pink",
+    // borderRadius: "50%"
   },
 };
 
 class Custom extends Component {
+
   render() {
+
     return (
-      <div style={styles.navStyle}>
-      <p>You may choose different flavors and fillings in each tier if you wish at no additional charge*</p>
-        <div style={{ display: "" }}>
-        <h2>Cake flavors</h2>
-        <table>
+      // style={{backgroundImage: "url('../images/pasta.jpg')"}}
+      <div style={styles.navStyle} >
+      <p style={styles.descriptionStyle}>You may choose different flavors and fillings in each tier if you wish at no additional charge*</p>
+        
+        <div style={styles.gridStyle}>
+        <div>
+          <p>Choose your size (people)</p>
+          <div style={{display: 'flex'}}>
+          <div style={{paddingTop: '10px'}}>
+          <div style={{display: 'flex', margin: '30px 0'}}><input style={{margin: '4px'}} type='checkbox' /><br/><p>50</p></div>
+          <div style={{display: 'flex', margin: '30px 0'}}><input style={{margin: '4px'}} type='checkbox' /><p>150</p></div>
+          <div style={{display: 'flex', margin: '30px 0'}}><input style={{margin: '4px'}} type='checkbox' /><p>250</p></div>
+          </div>
+          <div>
+          <img style={styles.logoStyle} src={require("../images/logo.png")} />
+          </div>
+          </div>
+        </div>
+        <div>
+        <h2 style={styles.titleStyle}>Cake flavors</h2>
+        {/* // add icon maybe */}
+        <table className='table table-sm' style={styles.tableStyle}>
           <tr>
-            <th></th>
           </tr>
           <tr>
             <td>Vanilla</td>
@@ -64,14 +117,11 @@ class Custom extends Component {
             <input type='checkbox' />
           </tr>
         </table>
-        <h2>Fillings</h2>
-        <table>
+        </div>
+        <div>
+        <h2 style={styles.titleStyle}>Fillings</h2>
+        <table className='table table-sm' style={styles.tableStyle}>
           <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-    
           </tr>
           <tr>
             <td>Custard</td>
@@ -140,14 +190,11 @@ class Custom extends Component {
             <input type='checkbox' />
           </tr>
         </table>
-        <h2>SPECIALTY FILLINGS</h2>
-        <table>
+        </div>
+        <div>
+        <h2 style={styles.titleStyle}>Specialty Fillings</h2>
+        <table className='table table-sm' style={styles.tableStyle}>
           <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th>Price</th>
-    
           </tr>
           <tr>
             <td>Piccaso</td>
@@ -222,14 +269,11 @@ class Custom extends Component {
             <input type='checkbox' />
           </tr>
           </table>
-          <h2>Specialty cakes</h2>
-          <table>
+          </div>
+          <div>
+          <h2 style={styles.titleStyle}>Specialty cakes</h2>
+          <table className='table table-sm' style={styles.tableStyle}>
           <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-    
           </tr>
           <tr>
             <td>White Chocolate Wrap</td>
@@ -262,9 +306,11 @@ class Custom extends Component {
             <input type='checkbox' />
           </tr>
           </table>
-          <p>**includes flowers and pick up</p>
+          </div>
+          
         </div>
         <p>*Additional charges may include: Shape of Cake, Detailed Decorations, Fresh or Gum Paste Flowers or Delivery</p>
+        <p>**includes flowers and pick up</p>
       </div>
     );
   }

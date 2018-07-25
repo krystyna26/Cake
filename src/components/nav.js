@@ -25,7 +25,7 @@ const styles = {
   },
   liStyle: {
     display: "inline-block",
-    width: "10em",
+    // width: "8em",
     height: "3.25em",
     margin: "10px",
     paddingTop: '20px',
@@ -42,31 +42,51 @@ const styles = {
   },
   imageStyle: {
     width: "100%",
-    position: "relative",
-    top: "-260px",
+    // position: "relative",
+    // top: "-260px",
     zIndex: "-1",
-    height: "600px",
-    float: "left"
+    // height: "600px",
+    float: "left",
     // background: 'fixed center'
+    backgroundImage: 'url(' + require('../images/pasta.jpg') + ')',
+    backgroundAttachment: 'fixed'
   },
   contentStyle: {
     border: "1px solid green",
     // display: "block"
     position: "absolute",
-    top: "434px",
+    top: "431px",
+    left: '0',
     width: "100%",
-    height: "800px",
+    // height: "800px",
+  },
+  gridStyle:{
+    display: 'grid', 
+    gridTemplateColumns: "repeat(6, 1fr)", 
+    width: '70%', 
+    height: '95px', 
+    marginLeft: '200px'
+  },
+  idoStyles:{
+    fontSize: '170px',
+    margin: "70px",
+    textAlign: 'center',
+    // color: 'gold'
   }
 };
 
 class Nav extends Component {
-  state = {
-    showContent: "Home"
-  };
+  state = { showContent: "Home", mounted: false};
 
-  buttonClicked = (e, buttonName) => {
+  componentDidMount = () => {
+    this.setState({ mounted: true });
+  }
+
+  buttonClicked = (e, buttonName, mounted) => {
     e.preventDefault();
     e.stopPropagation();
+    let currentState = this.state[mounted];
+    this.setState({ [mounted] : currentState ? false : true })
 
     switch (buttonName) {
       case "Home":
@@ -89,7 +109,7 @@ class Nav extends Component {
         return;
       default:
         console.log("Default case");
-        this.setState({ showContent: "Home" });
+        this.setState({ showContent: "Custom" });
         return;
     }
   };
@@ -117,19 +137,19 @@ class Nav extends Component {
 
   render() {
     return (
-      <div style={{ margin: "-8px" }}>
+      <div style={{ margin: "-8px", fontFamily: 'Comic Sans MS' }}>
         <div style={styles.navBar}>
           <div>
             <img style={styles.logoStyle} src={require("../images/logo.png")} />
           </div>
 
-          <div>
-            <span
+          <div style={styles.gridStyle}>
+            <div
               style={styles.liStyle}
               onClick={e => this.buttonClicked(e, "Home")}
             >
               <Button>HOME</Button>
-            </span>
+            </div>
             <span
               style={styles.liStyle}
               onClick={e => this.buttonClicked(e, "Traditional")}
@@ -163,11 +183,8 @@ class Nav extends Component {
           </div>
         </div>
 
-        <div>
-          <img
-            style={styles.imageStyle}
-            src={require("../images/panocake.jpg")}
-          />
+        <div style={styles.imageStyle}>
+          <h1 style={styles.idoStyles}>I Do</h1>
         </div>
 
         <div style={styles.contentStyle}>{this.renderPage()}</div>
