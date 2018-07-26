@@ -7,7 +7,13 @@ const Button = styled.div`
   background: transparent;
   color: palevioletred;
   // border: 2px solid palevioletred;
-  box-shadow: 0 8px 6px -6px #333;
+  // box-shadow: 0 8px 6px -6px #333;
+  cursor: pointer;
+  font-family: Comic Sans MS;
+  
+  &:hover {
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.2);
+  }
 `;
 
 export default Button;
