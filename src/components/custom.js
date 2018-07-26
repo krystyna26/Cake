@@ -15,7 +15,7 @@ const styles = {
     // height: '900px',
     width: "100%",
     backgroundColor: "pink",
-    padding: "10px",
+    padding: "0 30px",
     gridGap: "45px"
   },
   titleStyle: {
@@ -33,7 +33,7 @@ const styles = {
   },
   logoStyle: {
     // color: "pink",
-    width: "200px",
+    width: "250px",
     margin: " 15px"
     // position: "absolute",
     // left: " 85px",
@@ -54,24 +54,33 @@ class Custom extends Component {
 
         <div style={styles.gridStyle}>
           <div>
-            <p>Choose your size (people)</p>
+            <h2 style={styles.titleStyle}>Final guest count</h2>
             <div style={{ display: "flex" }}>
-              <div style={{ paddingTop: "10px" }}>
+              <div
+                style={{
+                  paddingTop: "28px",
+                  position: "absolute",
+                  left: "204px",
+                  zIndex: "2"
+                }}
+              >
                 <div style={{ display: "flex", margin: "30px 0" }}>
                   <input style={{ margin: "4px" }} type="checkbox" />
                   <br />
                   <p>50</p>
                 </div>
-                <div style={{ display: "flex", margin: "30px 0" }}>
+                <div style={{ display: "flex", margin: "42px 0" }}>
                   <input style={{ margin: "4px" }} type="checkbox" />
                   <p>150</p>
                 </div>
-                <div style={{ display: "flex", margin: "30px 0" }}>
+                <div style={{ display: "flex", paddingTop: "9px" }}>
                   <input style={{ margin: "4px" }} type="checkbox" />
                   <p>250</p>
                 </div>
               </div>
-              <div>
+              <div
+                style={{ position: "absolute", top: "190px", left: "100px" }}
+              >
                 <img
                   style={styles.logoStyle}
                   src={require("../images/logo.png")}

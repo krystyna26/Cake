@@ -5,6 +5,7 @@ import Romantic from "./romantic";
 import Fun from "./fun";
 import Custom from "./custom";
 import Partners from "./partners";
+import FAQ from "./FAQ";
 
 import Button from "../shared/NavButtons";
 // import logo from "images/logo.png";
@@ -28,7 +29,7 @@ const styles = {
     // width: "8em",
     height: "3.25em",
     margin: "10px",
-    paddingTop: '20px',
+    paddingTop: "20px",
     transition: ".3s background-color"
   },
   logoStyle: {
@@ -48,45 +49,45 @@ const styles = {
     // height: "600px",
     float: "left",
     // background: 'fixed center'
-    backgroundImage: 'url(' + require('../images/pasta.jpg') + ')',
-    backgroundAttachment: 'fixed'
+    backgroundImage: "url(" + require("../images/pasta.jpg") + ")",
+    backgroundAttachment: "fixed"
   },
   contentStyle: {
     border: "1px solid green",
     // display: "block"
     position: "absolute",
     top: "431px",
-    left: '0',
-    width: "100%",
+    left: "0",
+    width: "100%"
     // height: "800px",
   },
-  gridStyle:{
-    display: 'grid', 
-    gridTemplateColumns: "repeat(6, 1fr)", 
-    width: '70%', 
-    height: '95px', 
-    marginLeft: '200px'
+  gridStyle: {
+    display: "grid",
+    gridTemplateColumns: "repeat(7, 1fr)",
+    width: "70%",
+    height: "95px",
+    marginLeft: "200px"
   },
-  idoStyles:{
-    fontSize: '170px',
+  idoStyles: {
+    fontSize: "170px",
     margin: "70px",
-    textAlign: 'center',
+    textAlign: "center"
     // color: 'gold'
   }
 };
 
 class Nav extends Component {
-  state = { showContent: "Home", mounted: false};
+  state = { showContent: "Home", mounted: false };
 
   componentDidMount = () => {
     this.setState({ mounted: true });
-  }
+  };
 
   buttonClicked = (e, buttonName, mounted) => {
     e.preventDefault();
     e.stopPropagation();
     let currentState = this.state[mounted];
-    this.setState({ [mounted] : currentState ? false : true })
+    this.setState({ [mounted]: currentState ? false : true });
 
     switch (buttonName) {
       case "Home":
@@ -107,8 +108,10 @@ class Nav extends Component {
       case "Partners":
         this.setState({ showContent: "Partners" });
         return;
+      case "FAQ":
+        this.setState({ showContent: "FAQ" });
+        return;
       default:
-        console.log("Default case");
         this.setState({ showContent: "Custom" });
         return;
     }
@@ -133,11 +136,14 @@ class Nav extends Component {
     if (this.state.showContent === "Partners") {
       return <Partners />;
     }
+    if (this.state.showContent === "FAQ") {
+      return <FAQ />;
+    }
   };
 
   render() {
     return (
-      <div style={{ margin: "-8px", fontFamily: 'Comic Sans MS' }}>
+      <div style={{ margin: "-8px", fontFamily: "Comic Sans MS" }}>
         <div style={styles.navBar}>
           <div>
             <img style={styles.logoStyle} src={require("../images/logo.png")} />
@@ -179,6 +185,12 @@ class Nav extends Component {
               onClick={e => this.buttonClicked(e, "Partners")}
             >
               <Button>PARTNERS</Button>
+            </span>
+            <span
+              style={styles.liStyle}
+              onClick={e => this.buttonClicked(e, "FAQ")}
+            >
+              <Button>FAQ</Button>
             </span>
           </div>
         </div>
