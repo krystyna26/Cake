@@ -16,7 +16,8 @@ const styles = {
     width: "100%",
     backgroundColor: "pink",
     padding: "0 30px",
-    gridGap: "45px"
+    gridGap: "45px",
+    boxShadow: "0 0 40px 0 rgba(0, 0, 0, 0.2)"
   },
   titleStyle: {
     margin: "20px 0px"
@@ -39,6 +40,9 @@ const styles = {
     // left: " 85px",
     // background: "pink",
     // borderRadius: "50%"
+  },
+  pStyle: {
+    padding: "20px"
   }
 };
 
@@ -48,8 +52,9 @@ class Custom extends Component {
       // style={{backgroundImage: "url('../images/pasta.jpg')"}}
       <div style={styles.navStyle}>
         <p style={styles.descriptionStyle}>
-          You may choose different flavors and fillings in each tier if you wish
-          at no additional charge*
+          You may choose different flavors and fillings in each tier at no
+          additional charge. Additional cost may include: shape od cake,
+          detailed decoration, fresh or gum paste flowers, delivery*
         </p>
 
         <div style={styles.gridStyle}>
@@ -64,17 +69,23 @@ class Custom extends Component {
                   zIndex: "2"
                 }}
               >
-                <div style={{ display: "flex", margin: "30px 0" }}>
-                  <input style={{ margin: "4px" }} type="checkbox" />
+                <div style={{ display: "flex", margin: "68px 0 0 10px" }}>
+                  {/* <input style={{ margin: "4px" }} type="checkbox" /> */}
                   <br />
                   <p>50</p>
                 </div>
-                <div style={{ display: "flex", margin: "42px 0" }}>
-                  <input style={{ margin: "4px" }} type="checkbox" />
+                <div style={{ display: "flex", margin: "19px 10px" }}>
+                  {/* <input style={{ margin: "4px" }} type="checkbox" /> */}
                   <p>150</p>
                 </div>
-                <div style={{ display: "flex", paddingTop: "9px" }}>
-                  <input style={{ margin: "4px" }} type="checkbox" />
+                <div
+                  style={{
+                    display: "flex",
+                    paddingTop: "21px",
+                    marginLeft: "10px"
+                  }}
+                >
+                  {/* <input style={{ margin: "4px" }} type="checkbox" /> */}
                   <p>250</p>
                 </div>
               </div>
@@ -83,7 +94,7 @@ class Custom extends Component {
               >
                 <img
                   style={styles.logoStyle}
-                  src={require("../images/logo.png")}
+                  src={require("../images/4layers.png")}
                 />
               </div>
             </div>
@@ -96,47 +107,38 @@ class Custom extends Component {
               <tr>
                 <td>Vanilla</td>
                 <td>$10.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Chocolate</td>
                 <td>$15.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Tuxedo</td>
                 <td>$20.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Carrot</td>
                 <td>$10.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Spice</td>
                 <td>$15.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Poppyseed</td>
                 <td>$20.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Red Velvet</td>
                 <td>$10.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Banana</td>
                 <td>$15.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Lemon</td>
                 <td>$20.00</td>
-                <input type="checkbox" />
               </tr>
             </table>
           </div>
@@ -147,22 +149,18 @@ class Custom extends Component {
               <tr>
                 <td>Custard</td>
                 <td>$10.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Bavarian</td>
                 <td>$15.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Mocha</td>
                 <td>$20.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Fudge</td>
                 <td>$20.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <th>JAMS</th>
@@ -170,22 +168,18 @@ class Custom extends Component {
               <tr>
                 <td>Strawberry</td>
                 <td>$10.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Raspberry</td>
                 <td>$15.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Lemon</td>
                 <td>$20.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Pineapple</td>
                 <td>$20.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <th>MOUSSES</th>
@@ -193,141 +187,123 @@ class Custom extends Component {
               <tr>
                 <td>Chocolate</td>
                 <td>$10.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Raspberry</td>
                 <td>$15.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Lemon</td>
                 <td>$20.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Strawberry</td>
                 <td>$20.00</td>
-                <input type="checkbox" />
               </tr>
             </table>
           </div>
           <div>
             <h2 style={styles.titleStyle}>Specialty Fillings</h2>
+            <p>($5 - $40 add'l per tier)</p>
             <table className="table table-sm" style={styles.tableStyle}>
               <tr />
               <tr>
                 <td>Piccaso</td>
                 <td>$10.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Chocolate Truffle</td>
                 <td>$15.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>German Chocolate</td>
                 <td>$15.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Cappuccino</td>
                 <td>$10.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Apple</td>
                 <td>$10.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Fresh Banana</td>
                 <td>$15.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Strawberries and Creme</td>
                 <td>$15.00</td>
-                <input type="checkbox" />
               </tr>
 
               <tr>
                 <td>Bailey's and Creme</td>
                 <td>$15.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Kahlua</td>
                 <td>$10.00</td>
-                <input type="checkbox" />
               </tr>
 
               <tr>
                 <td>Cream Cheese</td>
                 <td>$10.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Hazelnut</td>
                 <td>$15.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
-                <td>Amaretto and Creme</td>
+                <td>Amaretto Creme</td>
                 <td>$15.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Grand Marnier</td>
                 <td>$10.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Tiramisu</td>
                 <td>$15.00</td>
-                <input type="checkbox" />
+              </tr>
+              <tr>
+                <td>Mango</td>
+                <td>$15.00</td>
               </tr>
             </table>
           </div>
           <div>
             <h2 style={styles.titleStyle}>Specialty cakes</h2>
+            <p>(Starting at $175 add'l per serving)</p>
             <table className="table table-sm" style={styles.tableStyle}>
               <tr />
               <tr>
                 <td>White Chocolate Wrap</td>
                 <td>$10.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Rolled Fondant</td>
                 <td>$10.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
-                <td>Chocolate Ganuche</td>
+                <td>Chocolate Ganache</td>
                 <td>$10.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Spiral Cake</td>
                 <td>$10.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Castle Cake</td>
                 <td>$10.00</td>
-                <input type="checkbox" />
               </tr>
               <tr>
                 <td>Fountain of Love**</td>
                 <td>$300.00</td>
-                <input type="checkbox" />
               </tr>
             </table>
           </div>
         </div>
-        <p>
+        <p style={{ marginTop: "10px" }}>
           *Additional charges may include: Shape of Cake, Detailed Decorations,
           Fresh or Gum Paste Flowers or Delivery
         </p>

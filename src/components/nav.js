@@ -13,16 +13,16 @@ import Button from "../shared/NavButtons";
 const styles = {
   navBar: {
     listStyleType: "none",
-    // backgroundColor: "rgb(66,34,24)",
-    backgroundColor: "rgb(107, 50, 17)",
+    // backgroundColor: "rgb(107, 50, 17)",
     textAlign: "center",
     color: "pink",
     height: "95px",
-    // display: "grid",
-    // display: "inline",
     boxSizing: "border-box",
     width: "100%",
     gridTemplateColumns: "fit-content(150px) fit-content(960px)"
+    // display: "grid",
+    // display: "inline",
+    // backgroundColor: "rgb(66,34,24)",
   },
   liStyle: {
     display: "inline-block",
@@ -48,6 +48,7 @@ const styles = {
     zIndex: "-1",
     // height: "600px",
     float: "left",
+    height: "345px",
     // background: 'fixed center'
     backgroundImage: "url(" + require("../images/pasta.jpg") + ")",
     backgroundAttachment: "fixed"
@@ -69,9 +70,13 @@ const styles = {
     marginLeft: "200px"
   },
   idoStyles: {
-    fontSize: "170px",
-    margin: "70px",
-    textAlign: "center"
+    fontSize: "75px",
+    margin: "116px 400px",
+    backgroundColor: "seashell",
+    padding: "30px",
+    opacity: "0.7",
+    textAlign: "center",
+    whiteSpace: "nowrap"
     // color: 'gold'
   }
 };
@@ -146,7 +151,10 @@ class Nav extends Component {
       <div style={{ margin: "-8px", fontFamily: "Comic Sans MS" }}>
         <div style={styles.navBar}>
           <div>
-            <img style={styles.logoStyle} src={require("../images/logo.png")} />
+            <img
+              style={styles.logoStyle}
+              src={require("../images/keepcalm.jpg")}
+            />
           </div>
 
           <div style={styles.gridStyle}>
@@ -196,7 +204,7 @@ class Nav extends Component {
         </div>
 
         <div style={styles.imageStyle}>
-          <h1 style={styles.idoStyles}>I Do</h1>
+          <h1 style={styles.idoStyles}>"I Do" Wedding Cakes</h1>
         </div>
 
         <div style={styles.contentStyle}>{this.renderPage()}</div>
