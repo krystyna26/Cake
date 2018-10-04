@@ -5,8 +5,9 @@ const styles = {
     padding: "52px"
   },
   gridStyle: {
-    width: "310px",
-    height: "260px",
+    // width: "310px",
+    minWidth: "400px",
+    // height: "260px",
     padding: "40px",
     marginBottom: "25px",
     boxShadow:
@@ -22,6 +23,12 @@ const styles = {
     padding: "10px",
     marginBottom: "25px",
     textAlign: "center"
+  },
+  picStyle: {
+    width: "100%",
+    height: "200px",
+    objectFit: "cover",
+    marginBottom: "10px"
   }
 };
 
@@ -30,24 +37,40 @@ class Partners extends Component {
     return (
       <div style={styles.navStyle}>
         <h4 style={styles.descriptionStyle}>Our Partners</h4>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 2fr)" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 2fr)" }}>
           <div style={styles.gridStyle}>
-            <h3>Partner_1</h3>
-            <h5>www.wearepartners.com</h5>
-            <h5># 123-456-7890</h5>
-            <h5>findme@gmail.com</h5>
+            <h3>MORGAN HILL BAKERY</h3>
+            <img
+              style={styles.picStyle}
+              src={require("../images/bakery.jpg")}
+            />
+            <h5>www.morganhillbakery.com</h5>
+            <h5># 408-776-9890</h5>
+            <h5>debbie@morganhillbakery.com</h5>
           </div>
           <div style={styles.gridStyle}>
-            <h3>Partner_2</h3>
-            <h5>www.wearepartners.com</h5>
-            <h5># 123-456-7890</h5>
-            <h5>findme@gmail.com</h5>
+            <h3>A JOYOUS OCCASION</h3>
+            <img
+              style={styles.picStyle}
+              src={require("../images/consultant.jpg")}
+            />
+            <h5>Event Planning, Certified Wedding Consultant</h5>
+            <h5>Marcia Ajo</h5>
+            <h5>www.ajoyousoccasion.net</h5>
+            <h5># 408-267-0773</h5>
+            <h5>marciaajo@aol.com</h5>
           </div>
           <div style={styles.gridStyle}>
-            <h3>Partner_3</h3>
-            <h5>www.wearepartners.com</h5>
-            <h5># 123-456-7890</h5>
-            <h5>findme@gmail.com</h5>
+            <h3>MICHI'S FLORAL</h3>
+            <img
+              style={styles.picStyle}
+              src={require("../images/floral.jpg")}
+            />
+            <h5>
+              Wedding anniversary, Birthdays, Holidays, Bussines and Residential
+              Party
+            </h5>
+            <h5># 408-778-0523</h5>
           </div>
           <div style={styles.gridStyle}>
             <h3>Partner_4</h3>

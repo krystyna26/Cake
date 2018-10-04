@@ -27,7 +27,7 @@ class FAQ extends Component {
         <div style={{ display: "block" }}>
           <div>
             <p style={{ fontWeight: "bold" }}>
-              Q: How bug will be my Wedding Cake?
+              Q: How big will be my Wedding Cake?
             </p>
             <p>
               A: Your Wedding Cake will be appropriately sized to feed everyone

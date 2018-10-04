@@ -22,7 +22,7 @@ const styles = {
   },
   descriptionStyle: {
     minWidth: "200px",
-    maxWidth: "1000px",
+    // maxWidth: "1000px",
     borderRadius: "2px",
     boxShadow:
       "0 9px 6px 0 rgba(0, 0, 0, 0.04), 0 10px 10px 0 rgba(0, 0, 0, 0.05)",

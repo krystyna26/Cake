@@ -50,7 +50,7 @@ const styles = {
     float: "left",
     height: "345px",
     // background: 'fixed center'
-    backgroundImage: "url(" + require("../images/pasta.jpg") + ")",
+    backgroundImage: "url(" + require("../images/food.jpg") + ")",
     backgroundAttachment: "fixed"
   },
   contentStyle: {
@@ -71,7 +71,7 @@ const styles = {
   },
   idoStyles: {
     fontSize: "75px",
-    margin: "116px 400px",
+    margin: "116px 0px",
     backgroundColor: "seashell",
     padding: "30px",
     opacity: "0.7",
@@ -153,7 +153,7 @@ class Nav extends Component {
           <div>
             <img
               style={styles.logoStyle}
-              src={require("../images/keepcalm.jpg")}
+              src={require("../images/iconNav.png")}
             />
           </div>
 
@@ -204,7 +204,7 @@ class Nav extends Component {
         </div>
 
         <div style={styles.imageStyle}>
-          <h1 style={styles.idoStyles}>"I Do" Wedding Cakes</h1>
+          <h1 style={styles.idoStyles}>'I Do' Wedding Cakes</h1>
         </div>
 
         <div style={styles.contentStyle}>{this.renderPage()}</div>
