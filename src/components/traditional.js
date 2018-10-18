@@ -8,7 +8,6 @@ const styles = {
   cakeDiv: {
     display: "grid",
     gridTemplateColumns: "repeat(4, 2fr)"
-    // maxWidth: "1100px"
   },
   gridStyle: {
     width: "207px",

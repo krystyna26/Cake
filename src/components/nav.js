@@ -8,76 +8,63 @@ import Partners from "./partners";
 import FAQ from "./FAQ";
 
 import Button from "../shared/NavButtons";
-// import logo from "images/logo.png";
 
 const styles = {
   navBar: {
-    listStyleType: "none",
-    // backgroundColor: "rgb(107, 50, 17)",
-    textAlign: "center",
-    color: "pink",
-    height: "95px",
     boxSizing: "border-box",
-    width: "100%",
-    gridTemplateColumns: "fit-content(150px) fit-content(960px)"
-    // display: "grid",
-    // display: "inline",
-    // backgroundColor: "rgb(66,34,24)",
+    color: "pink",
+    gridTemplateColumns: "fit-content(150px) fit-content(960px)",
+    height: "95px",
+    listStyleType: "none",
+    textAlign: "center",
+    width: "100%"
   },
   liStyle: {
     display: "inline-block",
-    // width: "8em",
     height: "3.25em",
     margin: "10px",
     paddingTop: "20px",
     transition: ".3s background-color"
   },
   logoStyle: {
+    background: "pink",
+    borderRadius: "50%",
     color: "pink",
-    width: "67px",
+    left: " 85px",
     margin: " 15px",
     position: "absolute",
-    left: " 85px",
-    background: "pink",
-    borderRadius: "50%"
+    width: "67px"
   },
   imageStyle: {
-    width: "100%",
-    // position: "relative",
-    // top: "-260px",
-    zIndex: "-1",
-    // height: "600px",
+    backgroundImage: "url(" + require("../images/food.jpg") + ")",
+    backgroundAttachment: "fixed",
     float: "left",
     height: "345px",
-    // background: 'fixed center'
-    backgroundImage: "url(" + require("../images/food.jpg") + ")",
-    backgroundAttachment: "fixed"
+    width: "100%",
+    zIndex: "-1"
   },
   contentStyle: {
     border: "1px solid green",
-    // display: "block"
+    left: "0",
     position: "absolute",
     top: "431px",
-    left: "0",
     width: "100%"
-    // height: "800px",
   },
   gridStyle: {
     display: "grid",
     gridTemplateColumns: "repeat(7, 1fr)",
-    width: "70%",
     height: "95px",
-    marginLeft: "200px"
+    marginLeft: "200px",
+    width: "70%"
   },
   idoStyles: {
+    backgroundColor: "seashell",
     fontSize: "75px",
     margin: "116px 0px",
-    backgroundColor: "seashell",
-    padding: "30px",
     opacity: "0.7",
+    padding: "30px",
     textAlign: "center",
     whiteSpace: "nowrap"
-    // color: 'gold'
   }
 };
 

@@ -4,21 +4,18 @@ import { Table } from "react-bootstrap";
 const styles = {
   navStyle: {
     padding: "52px"
-    // backgroundImage: "src={require('../images/logo.png')}",
   },
   gridStyle: {
-    display: "grid",
-    // width: '360px',
-    gridTemplateColumns: "fit-content(300px) fit-content(300px) 1fr",
-    gridGap: "5px",
-    boxSizing: "border-box",
-    // height: '900px',
-    minWidth: "1200px",
-    width: "100%",
     backgroundColor: "pink",
-    padding: "0 30px",
+    boxShadow: "0 0 40px 0 rgba(0, 0, 0, 0.2)",
+    boxSizing: "border-box",
+    display: "grid",
+    gridTemplateColumns: "fit-content(300px) fit-content(300px) 1fr",
+    // gridGap: "5px",
     gridGap: "45px",
-    boxShadow: "0 0 40px 0 rgba(0, 0, 0, 0.2)"
+    minWidth: "1200px",
+    padding: "0 30px",
+    width: "100%"
   },
   titleStyle: {
     margin: "20px 0px"
@@ -27,20 +24,15 @@ const styles = {
     width: "350px"
   },
   descriptionStyle: {
-    width: "100%",
     borderRadius: "2px",
     boxShadow:
       "0 9px 6px 0 rgba(0, 0, 0, 0.04), 0 10px 10px 0 rgba(0, 0, 0, 0.05)",
-    padding: "10px"
+    padding: "10px",
+    width: "100%"
   },
   logoStyle: {
-    // color: "pink",
-    width: "250px",
-    margin: " 15px"
-    // position: "absolute",
-    // left: " 85px",
-    // background: "pink",
-    // borderRadius: "50%"
+    margin: " 15px",
+    width: "250px"
   },
   pStyle: {
     padding: "20px"
@@ -50,7 +42,6 @@ const styles = {
 class Custom extends Component {
   render() {
     return (
-      // style={{backgroundImage: "url('../images/pasta.jpg')"}}
       <div style={styles.navStyle}>
         <p style={styles.descriptionStyle}>
           You may choose different flavors and fillings in each tier at no

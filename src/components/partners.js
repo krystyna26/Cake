@@ -5,30 +5,28 @@ const styles = {
     padding: "52px"
   },
   gridStyle: {
-    // width: "310px",
-    minWidth: "400px",
-    // height: "260px",
-    padding: "40px",
-    marginBottom: "25px",
     boxShadow:
       "0 9px 6px 0 rgba(0, 0, 0, 0.04), 0 10px 10px 0 rgba(0, 0, 0, 0.05)",
-    gridTemplateColumns: "fit-content(150px) fit-content(960px)"
+    gridTemplateColumns: "fit-content(150px) fit-content(960px)",
+    marginBottom: "25px",
+    minWidth: "400px",
+    padding: "40px"
   },
   descriptionStyle: {
-    minWidth: "1240px",
     borderRadius: "2px",
     boxShadow:
       "0 9px 6px 0 rgba(0, 0, 0, 0.04), 0 10px 10px 0 rgba(0, 0, 0, 0.05)",
     gridTemplateColumns: "fit-content(150px) fit-content(960px)",
-    padding: "10px",
     marginBottom: "25px",
+    minWidth: "1240px",
+    padding: "10px",
     textAlign: "center"
   },
   picStyle: {
-    width: "100%",
     height: "200px",
     objectFit: "cover",
-    marginBottom: "10px"
+    marginBottom: "10px",
+    width: "100%"
   }
 };
 

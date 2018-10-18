@@ -3,35 +3,26 @@ import Button from "../shared/NavButtons";
 
 const styles = {
   navStyle: {
-    // display: "block",
-    // border: "2px solid red",
-    // // float: 'left'
-    // boxSizing: "border-box",
-    // position: "relative",
-    // top: "340px"
     padding: "52px"
   },
   gridStyle: {
-    width: "207px",
+    boxShadow: "0 0 40px 0 rgba(0, 0, 0, 0.2)",
+    gridTemplateColumns: "fit-content(150px) fit-content(960px)",
     height: "260px",
     margin: "25px",
-    gridTemplateColumns: "fit-content(150px) fit-content(960px)",
-    boxShadow: "0 0 40px 0 rgba(0, 0, 0, 0.2)"
-    // padding: '40px',
-    // borderRadius: "6px",
+    width: "207px"
   },
   descriptionStyle: {
-    minWidth: "200px",
-    // maxWidth: "1000px",
     borderRadius: "2px",
     boxShadow:
       "0 9px 6px 0 rgba(0, 0, 0, 0.04), 0 10px 10px 0 rgba(0, 0, 0, 0.05)",
     padding: "5px",
-    margin: "0 30px"
+    margin: "0 30px",
+    minWidth: "200px"
   },
   pStyle: {
-    padding: "20px",
     fontSize: "19px",
+    padding: "20px",
     textAlign: "justify"
   }
 };
