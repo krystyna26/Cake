@@ -1,68 +1,84 @@
 import React, { Component } from "react";
-import Button from "../shared/NavButtons";
-import { Table } from "react-bootstrap";
+import styled from "styled-components";
+
+const StyledDescription = styled.h4`
+  background-color: white;
+  border-radius: 2px;
+  box-shadow: 0 9px 6px 12px rgba(0, 0, 0, 0.04),
+    0 10px 10px 0 rgba(0, 0, 0, 0.05);
+  font-size: 20px;
+  padding: 17px;
+  margin: 0px auto;
+  min-width: 1000px;
+`;
+
+const StyledGrid = styled.div`
+  background-color: white;
+  box-shadow: 0 9px 6px 12px rgba(0, 0, 0, 0.04),
+    0 10px 10px 0 rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-gap: 45px;
+  margin: 52px 0;
+  min-width: 1000px;
+  padding: 0 30px;
+  width: 100%;
+`;
+
+const StyledCakeIcon = styled.img`
+  margin: 15px;
+  width: 250px;
+`;
+
+const StyledTableTitle = styled.h2`margin: 20px 0;`;
+
+const StyledP = styled.p`
+  margin: 15px 0px;
+  font-size: 15px;
+`;
+
+const StyledInfoDiv = styled.div`
+  background-color: white;
+  margin: 52px -52px -52px -52px;
+  height: fit-content;
+`;
+
+const StyledPP = styled.p`
+  font-weight: bold;
+  text-align: center;
+  padding-top: 27px;
+`;
+
+const StyledContact = styled.div`
+  margin: 0px 212px;
+  text-align: center;
+`;
+
 const styles = {
-  navStyle: {
-    padding: "52px"
-  },
-  gridStyle: {
-    backgroundColor: "pink",
-    boxShadow: "0 0 40px 0 rgba(0, 0, 0, 0.2)",
-    boxSizing: "border-box",
-    display: "grid",
-    gridTemplateColumns: "fit-content(300px) fit-content(300px) 1fr",
-    // gridGap: "5px",
-    gridGap: "45px",
-    minWidth: "1200px",
-    padding: "0 30px",
-    width: "100%"
-  },
-  titleStyle: {
-    margin: "20px 0px"
-  },
   tableStyle: {
     width: "350px"
-  },
-  descriptionStyle: {
-    borderRadius: "2px",
-    boxShadow:
-      "0 9px 6px 0 rgba(0, 0, 0, 0.04), 0 10px 10px 0 rgba(0, 0, 0, 0.05)",
-    padding: "10px",
-    width: "100%"
-  },
-  logoStyle: {
-    margin: " 15px",
-    width: "250px"
-  },
-  pStyle: {
-    padding: "20px"
   }
 };
 
 class Custom extends Component {
   render() {
     return (
-      <div style={styles.navStyle}>
-        <p style={styles.descriptionStyle}>
+      <div>
+        <StyledDescription>
           You may choose different flavors and fillings in each tier at no
           additional charge. Additional cost may include: shape od cake,
-          detailed decoration, fresh or gum paste flowers, delivery*
-        </p>
+          detailed decoration, fresh or gum paste flowers, delivery
+        </StyledDescription>
 
-        <div style={styles.gridStyle}>
+        <StyledGrid>
           <div>
-            <h2 style={styles.titleStyle}>Final guest count</h2>
-            <div style={{ display: "flex" }}>
-              <div />
-              <img
-                style={styles.logoStyle}
-                src={require("../images/customcake.png")}
-              />
-            </div>
+            <StyledTableTitle>Final guest count</StyledTableTitle>
+            <StyledCakeIcon src={require("../images/customWhite.png")} />
           </div>
+
           <div>
-            <h2 style={styles.titleStyle}>Cake flavors</h2>
-            {/* // add icon maybe */}
+            <StyledTableTitle>Cake flavors</StyledTableTitle>
             <table className="table table-sm" style={styles.tableStyle}>
               <tr />
               <tr>
@@ -103,8 +119,9 @@ class Custom extends Component {
               </tr>
             </table>
           </div>
+
           <div>
-            <h2 style={styles.titleStyle}>Fillings</h2>
+            <StyledTableTitle>Fillings</StyledTableTitle>
             <table className="table table-sm" style={styles.tableStyle}>
               <tr />
               <tr>
@@ -163,8 +180,9 @@ class Custom extends Component {
               </tr>
             </table>
           </div>
+
           <div>
-            <h2 style={styles.titleStyle}>Specialty Fillings</h2>
+            <StyledTableTitle>Specialty Fillings</StyledTableTitle>
             <p>($5 - $40 add'l per tier)</p>
             <table className="table table-sm" style={styles.tableStyle}>
               <tr />
@@ -232,8 +250,9 @@ class Custom extends Component {
               </tr>
             </table>
           </div>
+
           <div>
-            <h2 style={styles.titleStyle}>Specialty cakes</h2>
+            <StyledTableTitle>Specialty cakes</StyledTableTitle>
             <p>(Starting at $175 add'l per serving)</p>
             <table className="table table-sm" style={styles.tableStyle}>
               <tr />
@@ -263,12 +282,25 @@ class Custom extends Component {
               </tr>
             </table>
           </div>
-        </div>
-        <p style={{ marginTop: "10px" }}>
-          *Additional charges may include: Shape of Cake, Detailed Decorations,
-          Fresh or Gum Paste Flowers or Delivery
-        </p>
-        <p>**includes flowers and pick up</p>
+        </StyledGrid>
+
+        <StyledDescription>
+          <StyledP>
+            *Additional charges may include: Shape of Cake, Detailed
+            Decorations, Fresh or Gum Paste Flowers or Delivery
+          </StyledP>
+          <StyledP>**includes flowers and pick up</StyledP>
+        </StyledDescription>
+
+        <StyledInfoDiv>
+          <StyledPP>Call or email today to schedule your appointment!</StyledPP>
+          <StyledContact>
+            <p>
+              380 Tennant Avenue | Morgan Hill | # 408-776-9890 |
+              debbie@idoweddingcakes.biz
+            </p>
+          </StyledContact>
+        </StyledInfoDiv>
       </div>
     );
   }

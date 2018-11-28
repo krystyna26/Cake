@@ -1,72 +1,91 @@
 import React, { Component } from "react";
-import Home from "./home";
-import Traditional from "./traditional";
-import Romantic from "./romantic";
-import Fun from "./fun";
+import styled from "styled-components";
+
 import Custom from "./custom";
-import Partners from "./partners";
 import FAQ from "./FAQ";
+import Fun from "./fun";
+import Home from "./home";
+import img from "../images/food.jpg";
+import Partners from "./partners";
+import Romantic from "./romantic";
+import Traditional from "./traditional";
 
 import Button from "../shared/NavButtons";
 
-const styles = {
-  navBar: {
-    boxSizing: "border-box",
-    color: "pink",
-    gridTemplateColumns: "fit-content(150px) fit-content(960px)",
-    height: "95px",
-    listStyleType: "none",
-    textAlign: "center",
-    width: "100%"
-  },
-  liStyle: {
-    display: "inline-block",
-    height: "3.25em",
-    margin: "10px",
-    paddingTop: "20px",
-    transition: ".3s background-color"
-  },
-  logoStyle: {
-    background: "pink",
-    borderRadius: "50%",
-    color: "pink",
-    left: " 85px",
-    margin: " 15px",
-    position: "absolute",
-    width: "67px"
-  },
-  imageStyle: {
-    backgroundImage: "url(" + require("../images/food.jpg") + ")",
-    backgroundAttachment: "fixed",
-    float: "left",
-    height: "345px",
-    width: "100%",
-    zIndex: "-1"
-  },
-  contentStyle: {
-    border: "1px solid green",
-    left: "0",
-    position: "absolute",
-    top: "431px",
-    width: "100%"
-  },
-  gridStyle: {
-    display: "grid",
-    gridTemplateColumns: "repeat(7, 1fr)",
-    height: "95px",
-    marginLeft: "200px",
-    width: "70%"
-  },
-  idoStyles: {
-    backgroundColor: "seashell",
-    fontSize: "75px",
-    margin: "116px 0px",
-    opacity: "0.7",
-    padding: "30px",
-    textAlign: "center",
-    whiteSpace: "nowrap"
-  }
-};
+const StyledContainer = styled.div`
+  font-family: Comic Sans MS;
+  margin: -8px;
+`;
+
+const StyledNavBar = styled.div`
+  box-sizing: border-box;
+  color: pink;
+  grid-template-columns: fit-content(150px) fit-content(960px);
+  height: 87px;
+  list-style-type: none;
+  text-align: center;
+  width: 100%;
+`;
+
+const StyledLogo = styled.img`
+  background: pink;
+  border-radius: 50%;
+  color: pink;
+  left: 85px;
+  margin: 15px;
+  position: absolute;
+  width: 67px;
+`;
+
+const StyledGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: 95px;
+  margin-left: 200px;
+  width: 70%;
+`;
+
+const StyledListItems = styled.div`
+  display: inline-block;
+  height: 3.25em;
+  margin: 10px;
+  padding-top: 20px;
+  transition: 0.3s background-color;
+`;
+
+const StyledMainImage = styled.div`
+  background-image: url(${img});
+  background-attachment: fixed;
+  float: left;
+  height: 352px;
+  width: 100%;
+  z-index: -1;
+`;
+
+const StyledBackground = styled.div`
+  background-color: black;
+  height: inherit;
+  opacity: 0.5;
+  z-index: 1;
+`;
+
+const StyledIDO = styled.h1`
+  color: white;
+  font-family: Comic Sans MS;
+  font-size: 75px;
+  padding: 133px;
+  text-align: center;
+  white-space: no-wrap;
+`;
+
+const StyledPageContent = styled.div`
+  background-color: pink;
+  left: 0;
+  position: absolute;
+  top: 431px;
+  width: 100%;
+  padding: 52px;
+`;
 
 class Nav extends Component {
   state = { showContent: "Home", mounted: false };
@@ -83,13 +102,19 @@ class Nav extends Component {
 
     switch (buttonName) {
       case "Home":
-        this.setState({ showContent: "Home" });
+        this.setState({
+          showContent: "Home"
+        });
         return;
       case "Traditional":
-        this.setState({ showContent: "Traditional" });
+        this.setState({
+          showContent: "Traditional"
+        });
         return;
       case "Romantic":
-        this.setState({ showContent: "Romantic" });
+        this.setState({
+          showContent: "Romantic"
+        });
         return;
       case "Fun":
         this.setState({ showContent: "Fun" });
@@ -135,67 +160,47 @@ class Nav extends Component {
 
   render() {
     return (
-      <div style={{ margin: "-8px", fontFamily: "Comic Sans MS" }}>
-        <div style={styles.navBar}>
+      <StyledContainer>
+        <StyledNavBar>
           <div>
-            <img
-              style={styles.logoStyle}
-              src={require("../images/iconNav.png")}
-            />
+            <StyledLogo src={require("../images/iconNav.png")} />
           </div>
 
-          <div style={styles.gridStyle}>
-            <div
-              style={styles.liStyle}
-              onClick={e => this.buttonClicked(e, "Home")}
-            >
+          <StyledGrid>
+            <StyledListItems onClick={e => this.buttonClicked(e, "Home")}>
               <Button>HOME</Button>
-            </div>
-            <span
-              style={styles.liStyle}
+            </StyledListItems>
+            <StyledListItems
               onClick={e => this.buttonClicked(e, "Traditional")}
             >
               <Button>TRADITIONAL</Button>
-            </span>
-            <span
-              style={styles.liStyle}
-              onClick={e => this.buttonClicked(e, "Romantic")}
-            >
+            </StyledListItems>
+            <StyledListItems onClick={e => this.buttonClicked(e, "Romantic")}>
               <Button>ROMANTIC</Button>
-            </span>
-            <span
-              style={styles.liStyle}
-              onClick={e => this.buttonClicked(e, "Fun")}
-            >
+            </StyledListItems>
+            <StyledListItems onClick={e => this.buttonClicked(e, "Fun")}>
               <Button>FUN</Button>
-            </span>
-            <span
-              style={styles.liStyle}
-              onClick={e => this.buttonClicked(e, "Custom")}
-            >
+            </StyledListItems>
+            <StyledListItems onClick={e => this.buttonClicked(e, "Custom")}>
               <Button>CUSTOM</Button>
-            </span>
-            <span
-              style={styles.liStyle}
-              onClick={e => this.buttonClicked(e, "Partners")}
-            >
+            </StyledListItems>
+            <StyledListItems onClick={e => this.buttonClicked(e, "Partners")}>
               <Button>PARTNERS</Button>
-            </span>
-            <span
-              style={styles.liStyle}
-              onClick={e => this.buttonClicked(e, "FAQ")}
-            >
+            </StyledListItems>
+            <StyledListItems onClick={e => this.buttonClicked(e, "FAQ")}>
               <Button>FAQ</Button>
-            </span>
-          </div>
-        </div>
+            </StyledListItems>
+          </StyledGrid>
+        </StyledNavBar>
 
-        <div style={styles.imageStyle}>
-          <h1 style={styles.idoStyles}>'I Do' Wedding Cakes</h1>
-        </div>
+        <StyledMainImage>
+          <StyledBackground>
+            <StyledIDO>'I Do' Wedding Cakes</StyledIDO>
+          </StyledBackground>
+        </StyledMainImage>
 
-        <div style={styles.contentStyle}>{this.renderPage()}</div>
-      </div>
+        <StyledPageContent>{this.renderPage()}</StyledPageContent>
+      </StyledContainer>
     );
   }
 }
