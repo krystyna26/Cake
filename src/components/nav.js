@@ -18,13 +18,17 @@ const StyledContainer = styled.div`
 `;
 
 const StyledNavBar = styled.div`
+  border-bottom: 2px solid #dedede;
   box-sizing: border-box;
   color: pink;
   grid-template-columns: fit-content(150px) fit-content(960px);
   height: 87px;
   list-style-type: none;
   text-align: center;
-  width: 100%;
+  width: 101%;
+  position: fixed;
+  background-color: white;
+  z-index: 1;
 `;
 
 const StyledLogo = styled.img`
@@ -58,6 +62,7 @@ const StyledMainImage = styled.div`
   background-attachment: fixed;
   float: left;
   height: 352px;
+  margin-top: 87px;
   width: 100%;
   z-index: -1;
 `;
@@ -79,7 +84,14 @@ const StyledIDO = styled.h1`
 `;
 
 const StyledPageContent = styled.div`
-  background-color: pink;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(255, 204, 212),
+    rgb(255, 179, 190),
+    rgb(255, 153, 168),
+    rgb(255, 128, 147),
+    rgb(255, 102, 125)
+  );
   left: 0;
   position: absolute;
   top: 431px;

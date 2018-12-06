@@ -28,6 +28,7 @@ const StyledQuestion = styled.p`
 `;
 
 const StyledInfoDiv = styled.div`
+  border-top: 2px solid #dedede;
   background-color: white;
   margin: 52px -52px -52px -52px;
   height: fit-content;

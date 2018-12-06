@@ -32,6 +32,7 @@ const StyledText = styled.p`
 
 const StyledInfoDiv = styled.div`
   background-color: white;
+  border-top: 2px solid #dedede;
   margin: 0px -52px -52px -52px;
   height: fit-content;
 `;
