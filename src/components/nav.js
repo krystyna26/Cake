@@ -49,7 +49,7 @@ const StyledGrid = styled.div`
   width: 70%;
 `;
 
-const StyledListItems = styled.div`
+const StyledListItems = styled.li`
   display: inline-block;
   height: 3.25em;
   margin: 10px;
